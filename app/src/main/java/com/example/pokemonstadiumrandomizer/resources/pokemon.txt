@@ -1,0 +1,1478 @@
+/stadium/pokerental.shtml
+Bulbasaur
+HP: 132
+Attack: 80
+Defense: 81
+Special: 97
+Speed: 77
+Leech Seed
+Toxic
+Body Slam
+Razor Leaf
+Ivysaur
+HP: 141
+Attack: 87
+Defense: 89
+Special: 106
+Speed: 85
+Razor Leaf
+Sleep Powder
+Growth
+Double-edge
+Venusaur
+HP: 156
+Attack: 103
+Defense: 104
+Special: 121
+Speed: 102
+Leech Seed
+Poisonpowder
+Solarbeam
+Take Down
+Charmander
+HP: 126
+Attack: 83
+Defense: 75
+Special: 82
+Speed: 97
+Flamethrower
+Slash
+Dig
+Fire Spin
+Charmeleon
+HP: 141
+Attack: 91
+Defense: 86
+Special: 93
+Speed: 107
+Flamethrower
+Counter
+Seismic Toss
+Stun Spore
+Charizard
+HP: 154
+Attack: 105
+Defense: 99
+Special: 106
+Speed: 122
+Fly
+Sword Dance
+Fire Spin
+Fire Blast
+Squirtle
+HP: 131
+Attack: 79
+Defense: 97
+Special: 82
+Speed: 75
+Surf
+Blizzard
+Body Slam
+Dig
+Wartortle
+HP: 140
+Attack: 88
+Defense: 106
+Special: 91
+Speed: 83
+Surf
+Strength
+Rest
+Ice Beam
+Blastoise
+HP: 155
+Attack: 104
+Defense: 121
+Special: 106
+Speed: 100
+Hydro Pump
+Skull Bash
+Withdraw
+Seismic Toss
+Caterpie
+HP: 132
+Attack: 61
+Defense: 67
+Special: 52
+Speed: 77
+String Shot
+Tackle
+Metapod
+HP: 137
+Attack: 51
+Defense: 87
+Special: 57
+Speed: 62
+String Shot
+Tackle
+Butterfree
+HP: 141
+Attack: 70
+Defense: 76
+Special: 106
+Speed: 95
+Psychic
+Supersonic
+Mega Drain
+Stun Spore
+Weedle
+HP: 127
+Attack: 66
+Defense: 62
+Special: 52
+Speed: 82
+String Shot
+Poison Sting
+Kakuna
+HP: 132
+Attack: 56
+Defense: 82
+Special: 57
+Speed: 67
+String Shot
+Poison Sting
+Beedrill
+HP: 146
+Attack: 105
+Defense: 66
+Special: 71
+Speed: 100
+Twineedle
+Hyper Beam
+Toxic
+Focus Energy
+Pidgey
+HP: 127
+Attack: 76
+Defense: 72
+Special: 67
+Speed: 88
+Fly
+Toxic
+Double-edge
+Double Team
+Pidgeotto
+HP: 147
+Attack: 89
+Defense: 83
+Special: 79
+Speed: 99
+Fly
+Quick Attack
+Sand-attack
+Take Down
+Pidgeot
+HP: 161
+Attack: 104
+Defense: 99
+Special: 93
+Speed: 114
+Mirror Move
+Fly
+Quick Attack
+Sand-attack
+Rattata
+HP: 117
+Attack: 87
+Defense: 67
+Special: 57
+Speed: 104
+Super Fang
+Blizzard
+Quick Attack
+Hyper Fang
+Raticate
+HP: 136
+Attack: 106
+Defense: 86
+Special: 76
+Speed: 122
+Hyper Fang
+Hyper Beam
+Focus Energy
+Thunder
+Spearow
+HP: 127
+Attack: 91
+Defense: 62
+Special: 63
+Speed: 102
+Drill Peck
+Mirror Move
+Double Team
+Double-edge
+Fearow
+HP: 143
+Attack: 114
+Defense: 89
+Special: 84
+Speed: 123
+Drill Peck
+Mirror Move
+Fury Attack
+Swift
+Ekans
+HP: 122
+Attack: 91
+Defense: 76
+Special: 72
+Speed: 87
+Earthquake
+Acid
+Screech
+Body Slam
+Arbok
+HP: 138
+Attack: 109
+Defense: 93
+Special: 88
+Speed: 103
+Glare
+Wrap
+Dig
+Strength
+Pikachu
+HP: 122
+Attack: 86
+Defense: 62
+Special: 82
+Speed: 122
+Thunderbolt
+Slam
+Thunder Wave
+Seismic Toss
+Raichu
+HP: 138
+Attack: 114
+Defense: 79
+Special: 113
+Speed: 123
+Thunder
+Thunder Wave
+Flash
+Mega Kick
+Sandshrew
+HP: 134
+Attack: 104
+Defense: 113
+Special: 59
+Speed: 68
+Earthquake
+Slash
+Seismic Toss
+Sand-attack
+Sandslash
+HP: 151
+Attack: 121
+Defense: 131
+Special: 76
+Speed: 87
+Dig
+Swift
+Seismic Toss
+Sand-attack
+Nidoran&#9792;
+HP: 142
+Attack: 78
+Defense: 84
+Special: 72
+Speed: 73
+Toxic
+Thunderbolt
+Body Slam
+Blizzard
+Nidorina
+HP: 151
+Attack: 87
+Defense: 93
+Special: 81
+Speed: 81
+Toxic
+Thunder
+Double-edge
+Ice Beam
+Nidoqueen
+HP: 166
+Attack: 103
+Defense: 108
+Special: 96
+Speed: 98
+Toxic
+Double Kick
+Bite
+Earthquake
+Nidoran&#9794;
+HP: 135
+Attack: 90
+Defense: 74
+Special: 74
+Speed: 84
+Blizzard
+Body Slam
+Focus
+Energy
+Nidorino
+HP: 142
+Attack: 97
+Defense: 83
+Special: 81
+Speed: 90
+Double-edge
+Horn Drill
+Focus Energy
+Thunder
+Nidoking
+HP: 157
+Attack: 113
+Defense: 98
+Special: 96
+Speed: 107
+Earthquake
+Horn Drill
+Rage
+Substitute
+Clefairy
+HP: 157
+Attack: 76
+Defense: 80
+Special: 92
+Speed: 67
+Thunderbolt
+Psychic
+Body Slam
+Blizzard
+Clefable
+HP: 173
+Attack: 94
+Defense: 97
+Special: 108
+Speed: 83
+Sing
+Tri Attack
+Minimize
+Ice Beam
+Vulpix
+HP: 125
+Attack: 72
+Defense: 72
+Special: 97
+Speed: 97
+Flamethrower
+Dig
+Confuse Ray
+Tail Whip
+Ninetales
+HP: 149
+Attack: 97
+Defense: 96
+Special: 121
+Speed: 122
+Fire Blast
+Skull Bash
+Confuse Ray
+Tail Whip
+Jigglypuff
+HP: 202
+Attack: 76
+Defense: 52
+Special: 57
+Speed: 52
+Sing
+Body Slam
+Seismic Toss
+Psychic
+Wigglytuff
+HP: 221
+Attack: 95
+Defense: 71
+Special: 76
+Speed: 70
+Sing
+Double-edge
+Submission
+Thunderbolt
+Zubat
+HP: 127
+Attack: 76
+Defense: 67
+Special: 72
+Speed: 87
+Confuse Ray
+Mega Drain
+Toxic
+Double-edge
+Golbat
+HP: 153
+Attack: 104
+Defense: 94
+Special: 98
+Speed: 113
+Confuse Ray
+Mega Drain
+Bite
+Haze
+Oddish
+HP: 132
+Attack: 81
+Defense: 87
+Special: 107
+Speed: 62
+Petal Dance
+Toxic
+Mega Drain
+Double-edge
+Gloom
+HP: 141
+Attack: 90
+Defense: 96
+Special: 111
+Speed: 65
+Petal Dance
+Take Down
+Mega Drain
+Stun Spore
+Vileplume
+HP: 153
+Attack: 104
+Defense: 109
+Special: 123
+Speed: 73
+Petal Dance
+Sleep Powder
+Acid
+Cut
+Paras
+HP: 122
+Attack: 101
+Defense: 87
+Special: 87
+Speed: 57
+Spore
+Slash
+Dig
+Mega Drain
+Parasect
+HP: 141
+Attack: 120
+Defense: 106
+Special: 106
+Speed: 55
+Spore
+Take Down
+Dig
+Solarbeam
+Venonat
+HP: 147
+Attack: 86
+Defense: 82
+Special: 72
+Speed: 77
+Psychic
+Mega Drain
+Double-edge
+Stun Spore
+Venomoth
+HP: 148
+Attack: 89
+Defense: 84
+Special: 113
+Speed: 113
+Psychic
+Supersonic
+Solarbeam
+Swift
+Diglett
+HP: 97
+Attack: 86
+Defense: 57
+Special: 77
+Speed: 127
+Earthquake
+Slash
+Sand-attack
+Rock Slide
+Dugtrio
+HP: 113
+Attack: 104
+Defense: 74
+Special: 93
+Speed: 143
+Dig
+Sand-attack
+Toxic
+Hyper Beam
+Meowth
+HP: 127
+Attack: 76
+Defense: 67
+Special: 72
+Speed: 122
+Slash
+Thunderbolt
+Swift
+Double Team
+Persian
+HP: 143
+Attack: 94
+Defense: 84
+Special: 88
+Speed: 138
+Slash
+Bubblebeam
+Mimic
+Growl
+Psyduck
+HP: 137
+Attack: 83
+Defense: 80
+Special: 82
+Speed: 87
+Surf
+Confusion
+Dig
+Blizzard
+Golduck
+HP: 156
+Attack: 103
+Defense: 99
+Special: 103
+Speed: 107
+Ice Beam
+Surf
+Toxic
+Disable
+Mankey
+HP: 127
+Attack: 111
+Defense: 67
+Special: 67
+Speed: 102
+Submission
+Rock Slide
+Seismic Toss
+Screech
+Primeape
+HP: 143
+Attack: 129
+Defense: 84
+Special: 83
+Speed: 118
+Fury Swipes
+Rock Slide
+Low Kick
+Screech
+Growlithe
+HP: 139
+Attack: 99
+Defense: 73
+Special: 79
+Speed: 88
+Flamethrower
+Body Slam
+Reflect
+Dig
+Arcanine
+HP: 163
+Attack: 128
+Defense: 98
+Special: 98
+Speed: 113
+Fire Blast
+Take Down
+Dragon Rage
+Substitute
+Poliwag
+HP: 127
+Attack: 81
+Defense: 72
+Special: 72
+Speed: 122
+Body Slam
+Blizzard
+Surf
+Amnesia
+Poliwhirl
+HP: 146
+Attack: 90
+Defense: 91
+Special: 76
+Speed: 115
+Hypnosis
+Surf
+Ice Beam
+Earthquake
+Poliwrath
+HP: 166
+Attack: 106
+Defense: 116
+Special: 91
+Speed: 92
+Hypnosis
+Submission
+Counter
+Hydro Pump
+Abra
+HP: 112
+Attack: 51
+Defense: 47
+Special: 137
+Speed: 122
+Psychic
+Seismic Toss
+Reflect
+Thunder Wave
+Kadabra
+HP: 121
+Attack: 60
+Defense: 56
+Special: 146
+Speed: 130
+Psychic
+Counter
+Recover
+Dig
+Alakazam
+HP: 131
+Attack: 71
+Defense: 66
+Special: 156
+Speed: 142
+Psybeam
+Metonome
+Disable
+Tri Attack
+Machop
+HP: 154
+Attack: 109
+Defense: 78
+Special: 64
+Speed: 63
+Submission
+Rock Slide
+Earthquake
+Focus Energy
+Machoke
+HP: 161
+Attack: 125
+Defense: 96
+Special: 76
+Speed: 70
+Submission
+Strength
+Rock Slide
+Focus Energy
+Machamp
+HP: 166
+Attack: 151
+Defense: 101
+Special: 86
+Speed: 77
+Low Kick
+Strength
+Rock Slide
+Focus Energy
+Bellsprout
+HP: 134
+Attack: 104
+Defense: 63
+Special: 99
+Speed: 68
+Razor Leaf
+Growth
+Mega Drain
+Stun Spore
+Weepinbell
+HP: 146
+Attack: 115
+Defense: 76
+Special: 111
+Speed: 80
+Razor Leaf
+Acid
+Wrap
+Toxic
+Victreebel
+HP: 156
+Attack: 126
+Defense: 86
+Special: 121
+Speed: 92
+Solarbeam
+Acid
+Reflect
+Slam
+Tentacool
+HP: 124
+Attack: 69
+Defense: 63
+Special: 129
+Speed: 98
+Surf
+Supersonic
+Mega Drain
+Blizzard
+Tentacruel
+HP: 156
+Attack: 91
+Defense: 86
+Special: 141
+Speed: 122
+Acid
+Supersonic
+Hydro Pump
+Cut
+Geodude
+HP: 124
+Attack: 109
+Defense: 128
+Special: 59
+Speed: 48
+Earthquake
+Seismic Toss
+Rock Slide
+Exploison
+Graveler
+HP: 136
+Attack: 120
+Defense: 141
+Special: 71
+Speed: 60
+Earthquake
+Seismic Toss
+Strength
+Selfdestruct
+Golem
+HP: 156
+Attack: 131
+Defense: 151
+Special: 76
+Speed: 67
+Dig
+Seismic Toss
+Fire Blast
+Metronome
+Ponyta
+HP: 131
+Attack: 110
+Defense: 81
+Special: 91
+Speed: 115
+Fire Blast
+Agility
+Horn Drill
+Body Slam
+Rapidash
+HP: 141
+Attack: 121
+Defense: 91
+Special: 101
+Speed: 127
+Fire Blast
+Stomp
+Toxic
+Fire Spin
+Slowpoke
+HP: 174
+Attack: 94
+Defense: 93
+Special: 69
+Speed: 43
+Surf
+Psychic
+Thunder Wave
+Amnesia
+Slowbro
+HP: 173
+Attack: 99
+Defense: 134
+Special: 103
+Speed: 53
+Surf
+Psychic
+Disable
+Withdraw
+Magnemite
+HP: 109
+Attack: 64
+Defense: 98
+Special: 124
+Speed: 73
+Thunderbolt
+Thunder Wave
+Supersonic
+Double-edge
+Magneton
+HP: 128
+Attack: 84
+Defense: 119
+Special: 143
+Speed: 93
+Thunder
+Screech
+Supersonic
+Swift
+Farfetch'd
+HP: 136
+Attack: 94
+Defense: 83
+Special: 87
+Speed: 88
+Slash
+Sand-attack
+Toxic
+Fly
+Doduo
+HP: 119
+Attack: 114
+Defense: 73
+Special: 64
+Speed: 103
+Drill Peck
+Tri Attack
+Double Team
+Reflect
+Dodrio
+HP: 138
+Attack: 134
+Defense: 94
+Special: 83
+Speed: 123
+Fly
+Tri Attack
+Agility
+Reflect
+Seel
+HP: 149
+Attack: 74
+Defense: 83
+Special: 99
+Speed: 73
+Ice Beam
+Body Slam
+Horn Drill
+Surf
+Dewgong
+HP: 166
+Attack: 91
+Defense: 101
+Special: 116
+Speed: 92
+Aurora Beam
+Headbutt
+Rest
+Surf
+Grimer
+HP: 164
+Attack: 109
+Defense: 78
+Special: 69
+Speed: 53
+Sludge
+Body Slam
+Exploison
+Screech
+Muk
+HP: 183
+Attack: 129
+Defense: 99
+Special: 88
+Speed: 73
+Sludge
+Thunderbolt
+Hyper Beam
+Selfdestruct
+Shellder
+HP: 114
+Attack: 94
+Defense: 128
+Special: 74
+Speed: 68
+Surf
+Exploison
+Blizzard
+Tri Attack
+Cloyster
+HP: 123
+Attack: 113
+Defense: 198
+Special: 103
+Speed: 88
+Clamp
+Spike Cannon
+Ice Beam
+Supersonic
+Gastly
+HP: 114
+Attack: 64
+Defense: 58
+Special: 129
+Speed: 108
+Hypnosis
+Dream Eater
+Psychic
+Confuse Ray
+Haunter
+HP: 126
+Attack: 75
+Defense: 71
+Special: 141
+Speed: 120
+Mega Drain
+Psychic
+Exploison
+Confuse Ray
+Gengar
+HP: 136
+Attack: 86
+Defense: 81
+Special: 151
+Speed: 132
+Thunderbolt
+Nigh Shade
+Hypnosis
+Confuse Ray
+Onix
+HP: 116
+Attack: 70
+Defense: 186
+Special: 56
+Speed: 95
+Earthquake
+Rock Slide
+Strength
+Exploison
+Drowzee
+HP: 144
+Attack: 77
+Defense: 73
+Special: 119
+Speed: 70
+Hypnosis
+Dream Eater
+Psychic
+Tri Attack
+Hypno
+HP: 161
+Attack: 94
+Defense: 91
+Special: 136
+Speed: 89
+Hypnosis
+Headbutt
+Dream Eater
+Meditate
+Krabby
+HP: 114
+Attack: 134
+Defense: 118
+Special: 54
+Speed: 78
+Crabhammer
+Guillotine
+Double-edge
+Blizzard
+Kingler
+HP: 131
+Attack: 151
+Defense: 136
+Special: 71
+Speed: 97
+Crabhammer
+Guillotine
+Stomp
+Substitute
+Voltorb
+HP: 124
+Attack: 59
+Defense: 78
+Special: 84
+Speed: 128
+Thunderbolt
+Thunder Wave
+Swift
+Exploison
+Electrode
+HP: 138
+Attack: 74
+Defense: 96
+Special: 103
+Speed: 163
+Thunder
+Thunder Wave
+Swift
+Selfdestruct
+Exeggcute
+HP: 144
+Attack: 69
+Defense: 108
+Special: 89
+Speed: 68
+Psychic
+Exploison
+Leech Seed
+Toxic
+Exeggutor
+HP: 168
+Attack: 113
+Defense: 103
+Special: 143
+Speed: 73
+Mega Drain
+Stun Spore
+Leech Seed
+Egg Bomb
+Cubone
+HP: 134
+Attack: 79
+Defense: 123
+Special: 69
+Speed: 63
+Earthquake
+Submission
+Blizzard
+Strength
+Marowak
+HP: 141
+Attack: 105
+Defense: 136
+Special: 76
+Speed: 70
+Bonemerang
+Thrash
+Fire Blast
+Focus Energy
+Hitmonlee
+HP: 131
+Attack: 145
+Defense: 79
+Special: 61
+Speed: 112
+Hi Jump Kick
+Mega Kick
+Metronome
+Seismic Toss
+Hitmonchan
+HP: 131
+Attack: 130
+Defense: 105
+Special: 61
+Speed: 101
+Hypnosis
+Dream Eater
+Psychic
+Confuse Ray
+Lickitung
+HP: 171
+Attack: 80
+Defense: 101
+Special: 86
+Speed: 55
+Strength
+Blizzard
+Thunder
+Fire Blast
+Koffing
+HP: 124
+Attack: 94
+Defense: 123
+Special: 89
+Speed: 63
+Sludge
+Toxic
+Thunderbolt
+Exploison
+Weezing
+HP: 141
+Attack: 111
+Defense: 141
+Special: 106
+Speed: 82
+Sludge
+Hyper Beam
+Fire Blast
+Selfdestruct
+Rhyhorn
+HP: 161
+Attack: 110
+Defense: 121
+Special: 56
+Speed: 50
+Earthquake
+Body Slam
+Rock Slide
+Fire Blast
+Rhydon
+HP: 181
+Attack: 151
+Defense: 141
+Special: 66
+Speed: 62
+Dig
+Strength
+Thunder
+Surf
+Chansey
+HP: 326
+Attack: 26
+Defense: 26
+Special: 126
+Speed: 72
+Thunder
+Fire Blast
+Minimize
+Rest
+Tangela
+HP: 143
+Attack: 79
+Defense: 139
+Special: 123
+Speed: 83
+Mega Drain
+Growth
+Toxic
+Double-edge
+Kangaskhan
+HP: 181
+Attack: 116
+Defense: 101
+Special: 61
+Speed: 112
+Dizzy Punch
+Rock Slide
+Surf
+Thunderbolt
+Horsea
+HP: 114
+Attack: 69
+Defense: 98
+Special: 99
+Speed: 88
+Hydro Pump
+Toxic
+Smokescreen
+Ice Beam
+Seadra
+HP: 133
+Attack: 89
+Defense: 119
+Special: 118
+Speed: 108
+Surf
+Toxic
+Smokescreen
+Swift
+Goldeen
+HP: 129
+Attack: 96
+Defense: 88
+Special: 79
+Speed: 91
+Surf
+Supersonic
+Horn Attack
+Ice Beam
+Seaking
+HP: 158
+Attack: 116
+Defense: 89
+Special: 103
+Speed: 91
+Surf
+Toxic
+Smokescreen
+Swift
+Staryu
+HP: 114
+Attack: 74
+Defense: 83
+Special: 99
+Speed: 113
+Hydro Pump
+Recover
+Thunderbolt
+Psychic
+Starmie
+HP: 136
+Attack: 96
+Defense: 106
+Special: 121
+Speed: 137
+Surf
+Thunder
+Swift
+Harden
+Mr. Mime
+HP: 121
+Attack: 70
+Defense: 91
+Special: 126
+Speed: 115
+Barrier
+Psychic
+Metronome
+Seismic Toss
+Scyther
+HP: 146
+Attack: 131
+Defense: 101
+Special: 76
+Speed: 127
+Slash
+Wing Attack
+Leer
+Double Team
+Jynx
+HP: 146
+Attack: 75
+Defense: 61
+Special: 121
+Speed: 120
+Ice Punch
+Mega Punch
+Psychic
+Lovely Kiss
+Electabuzz
+HP: 143
+Attack: 107
+Defense: 81
+Special: 108
+Speed: 128
+Thunderpunch
+Mega Punch
+Psychic
+Thunder Wave
+Magmar
+HP: 143
+Attack: 119
+Defense: 81
+Special: 108
+Speed: 116
+Fire Punch
+Mega Punch
+Psychic
+Smokescreen
+Pinsir
+HP: 141
+Attack: 146
+Defense: 121
+Special: 76
+Speed: 107
+Strength
+Harden
+Seismic Toss
+Guillotine
+Tauros
+HP: 151
+Attack: 121
+Defense: 116
+Special: 91
+Speed: 132
+Double-edge
+Fire Blast
+Tail Whip
+Bide
+Magikarp
+HP: 107
+Attack: 41
+Defense: 87
+Special: 52
+Speed: 112
+Splash
+Tackle
+Gyarados
+HP: 168
+Attack: 143
+Defense: 97
+Special: 118
+Speed: 99
+Surf
+Dragon Rage
+Bite
+Fire Blast
+Lapras
+HP: 206
+Attack: 106
+Defense: 101
+Special: 116
+Speed: 82
+Ice Beam
+Solarbeam
+Body Slam
+Sing
+Ditto
+HP: 135
+Attack: 79
+Defense: 80
+Special: 80
+Speed: 80
+Transform
+Eevee
+HP: 139
+Attack: 84
+Defense: 78
+Special: 94
+Speed: 83
+Body Slam
+Swift
+Sand-attack
+Toxic
+Vaporeon
+HP: 206
+Attack: 86
+Defense: 81
+Special: 131
+Speed: 87
+Surf
+Quick Attack
+Sand-attack
+Acid Armor
+Jolteon
+HP: 141
+Attack: 86
+Defense: 81
+Special: 131
+Speed: 152
+Thunderbolt
+Pin Missile
+Toxic
+Sand-attack
+Flareon
+HP: 141
+Attack: 151
+Defense: 81
+Special: 131
+Speed: 87
+Fire Blast
+Take Down
+Smog
+Sand-attack
+Porygon
+HP: 146
+Attack: 85
+Defense: 96
+Special: 101
+Speed: 65
+Tri Attack
+Psychic
+Sharpen
+Conversion
+Omanyte
+HP: 119
+Attack: 69
+Defense: 128
+Special: 119
+Speed: 63
+Surf
+Ice Beam
+Double-edge
+Double Team
+Omastar
+HP: 146
+Attack: 81
+Defense: 146
+Special: 136
+Speed: 77
+Hydro Pump
+Submission
+Spike Cannon
+Withdraw
+Kabuto
+HP: 114
+Attack: 109
+Defense: 118
+Special: 74
+Speed: 83
+Hydro Pump
+Lizzard
+Slash
+Double Team
+Kabutops
+HP: 136
+Attack: 136
+Defense: 126
+Special: 91
+Speed: 102
+Surf
+Swords Dance
+Mega Kick
+Submission
+Aerodactyl
+HP: 156
+Attack: 126
+Defense: 86
+Special: 81
+Speed: 152
+Fly
+Hyper Beam
+Supersonic
+Dragon Rage
+Snorlax
+HP: 236
+Attack: 131
+Defense: 86
+Special: 86
+Speed: 52
+Mega Kick
+Rock Slide
+Metronome
+Rest
+Articuno
+HP: 162
+Attack: 102
+Defense: 117
+Special: 142
+Speed: 102
+Ice Beam
+Sky Attack
+Razor Wind
+Substitute
+Zapdos
+HP: 162
+Attack: 107
+Defense: 102
+Special: 142
+Speed: 117
+Thunderbolt
+Sky Attack
+Thunder Wave
+Flash
+Moltres
+HP: 162
+Attack: 117
+Defense: 107
+Special: 142
+Speed: 107
+Fire Blast
+Fly
+Swift
+Substitute
+Dratini
+HP: 128
+Attack: 95
+Defense: 77
+Special: 82
+Speed: 82
+Hyper Beam
+Body Slam
+Thunderbolt
+Thunder Wave
+Dragonair
+HP: 142
+Attack: 109
+Defense: 91
+Special: 96
+Speed: 95
+Hyper Beam
+Swift
+Ice Beam
+Thunder Wave
+Dragonite
+HP: 163
+Attack: 151
+Defense: 112
+Special: 117
+Speed: 97
+Slam
+Dragon Rage
+Thunder
+Agility        
