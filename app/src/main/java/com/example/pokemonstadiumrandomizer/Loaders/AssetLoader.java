@@ -26,9 +26,13 @@ public class AssetLoader {
         int stop;
         final InputStream file;
         try {
-            file = new FileInputStream(context.getFilesDir() + "/" + PATH);
+                File fileLoc = new File(context.getFilesDir() + "/" + PATH);
+                if(!fileLoc.exists()){
+                    fileLoc.createNewFile();
+                }
+                file = new FileInputStream(context.getFilesDir() + "/" + PATH);
 
-        reader = new BufferedReader(new InputStreamReader(file));
+            reader = new BufferedReader(new InputStreamReader(file));
         String line;
         while ((line = reader.readLine()) != null) {
             if (line.contains(key)) {

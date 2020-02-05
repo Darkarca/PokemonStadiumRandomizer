@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/backImg"
-        android:layout_width="416dp"
-        android:layout_height="688dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:layout_marginTop="24dp"
         android:background="@drawable/background0"

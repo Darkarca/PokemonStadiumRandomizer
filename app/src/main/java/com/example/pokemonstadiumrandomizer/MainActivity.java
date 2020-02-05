@@ -66,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initGUI() {
+        //FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
         backImg = findViewById(R.id.backImg);
         SettingsActivity.setBackground(backImg, getApplicationContext());
         //AssetLoader.addSetting("BackgroundImage", "Background0.png",getApplicationContext());
-        //FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
         p1p1 = findViewById(R.id.p1p1);
         p1p2 = findViewById(R.id.p1p2);
         p1p3 = findViewById(R.id.p1p3);
