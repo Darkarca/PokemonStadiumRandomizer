@@ -6,6 +6,7 @@ import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,12 +19,15 @@ public class AssetLoader {
 
     private static String PATH = "settings.txt";
 
-    private static String loadSetting(String key, Context context) throws IOException {
+    public static String loadSetting(String key, Context context){
         BufferedReader reader;
         String setting;
         int start;
         int stop;
-        final InputStream file = new FileInputStream(context.getFilesDir() + "/" + PATH);
+        final InputStream file;
+        try {
+            file = new FileInputStream(context.getFilesDir() + "/" + PATH);
+
         reader = new BufferedReader(new InputStreamReader(file));
         String line;
         while ((line = reader.readLine()) != null) {
@@ -35,6 +39,9 @@ public class AssetLoader {
                 return setting;
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
             return null;
     }
 
