@@ -5,7 +5,6 @@ import android.content.Context;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,14 +13,13 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt.PATH;
-
-public class FileAppender {
-    public static Boolean appendFile(String path, String toAdd, Context context) throws IOException {
+public class FileReadWriter {
+    public static Boolean appendFile(String path, String toAdd, Context context){
 
         List<String> currentData = read(path, context);
         currentData.add(toAdd);
         File file = new File(context.getFilesDir() + "/" + path);
+        try {
         if(!file.exists()){
             file.createNewFile();
         }
@@ -29,26 +27,35 @@ public class FileAppender {
         if(!file.exists()){
             file.createNewFile();
         }
-        FileOutputStream fileout = new FileOutputStream(context.getFilesDir() + "/" + path);
+        FileOutputStream fileout = null;
+
+            fileout = new FileOutputStream(context.getFilesDir() + "/" + path);
+
         OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
         for (String s:currentData) {
             outputWriter.write(s + "\n");
         }
         outputWriter.close();
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
-    private static List<String> read(String path, Context context) throws IOException {
+    public static List<String> read(String path, Context context){
         List <String> data = new ArrayList();
         BufferedReader reader;
-        final InputStream file = new FileInputStream(context.getFilesDir() + "/" + path);
+        final InputStream file;
+        try {
+            file = new FileInputStream(context.getFilesDir() + "/" + path);
         reader = new BufferedReader(new InputStreamReader(file));
         String line;
         while ((line = reader.readLine()) != null) {
             data.add(line);
         }
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return data;
     }
 }

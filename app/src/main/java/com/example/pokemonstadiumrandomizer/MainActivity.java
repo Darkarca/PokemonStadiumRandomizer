@@ -1,14 +1,11 @@
 package com.example.pokemonstadiumrandomizer;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
@@ -18,10 +15,7 @@ import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 import com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt;
 import com.example.pokemonstadiumrandomizer.Loaders.WinLossLoader;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -97,13 +91,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 p2score++;
                 p2wins.setText("Wins: " + p2score);
-
-                try {
                     WinLossLoader.writeScores(player2, player1, getApplicationContext());
-                    System.out.println(WinLossLoader.readScores("winners.txt", getApplicationContext()));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
             }
         });
         p1win.setOnClickListener(new View.OnClickListener() {
@@ -111,13 +100,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 p1score++;
                 p1wins.setText("Wins: " + p1score);
-                try {
                     WinLossLoader.writeScores(player1, player2, getApplicationContext());
-                    WinLossLoader.readScores("winners.txt", getApplicationContext());
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
         imageList.add(p1p1);
@@ -145,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }*/
-                    //System.out.println("Success");
-
             }
         });
             FloatingActionButton randomize = findViewById(R.id.randomize);
@@ -179,24 +160,12 @@ public class MainActivity extends AppCompatActivity {
         int i = 0;
            for (final ImageView iv:imageList) {
                final int j = player1.get(i).getNumberValue();
-               Drawable d = AssetLoader.loadPokemon(player1.get(i), getApplicationContext());
-               LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+               final Drawable d = AssetLoader.loadPokemon(player1.get(i), getApplicationContext());
                iv.setImageDrawable(d);
                iv.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View v) {
-                       Pokemon currentPoke = LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1);
-                       focusedPKMN.setImageDrawable(iv.getDrawable());
-                       name.setText(currentPoke.getName());
-                       hp.setText(currentPoke.getStats()[0]);
-                       att.setText(currentPoke.getStats()[1]);
-                       def.setText(currentPoke.getStats()[2]);
-                       spec.setText(currentPoke.getStats()[3]);
-                       spd.setText(currentPoke.getStats()[4]);
-                       att1.setText(currentPoke.getAttacks()[0]);
-                       att2.setText(currentPoke.getAttacks()[1]);
-                       att3.setText(currentPoke.getAttacks()[2]);
-                       att4.setText(currentPoke.getAttacks()[3]);
+                       focusPokemon(d, LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1));
                    }
                });
                i++;
@@ -205,29 +174,32 @@ public class MainActivity extends AppCompatActivity {
            i=0;
         for (final ImageView iv:imageList2) {
             final int j = player2.get(i).getNumberValue();
-            Drawable d = AssetLoader.loadPokemon(player2.get(i), getApplicationContext());
-            LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            final Drawable d = AssetLoader.loadPokemon(player2.get(i), getApplicationContext());
             iv.setImageDrawable(d);
             iv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Pokemon currentPoke = LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1);
-                    focusedPKMN.setImageDrawable(iv.getDrawable());
-                    name.setText(currentPoke.getName());
-                    hp.setText(currentPoke.getStats()[0]);
-                    att.setText(currentPoke.getStats()[1]);
-                    def.setText(currentPoke.getStats()[2]);
-                    spec.setText(currentPoke.getStats()[3]);
-                    spd.setText(currentPoke.getStats()[4]);
-                    att1.setText(currentPoke.getAttacks()[0]);
-                    att2.setText(currentPoke.getAttacks()[1]);
-                    att3.setText(currentPoke.getAttacks()[2]);
-                    att4.setText(currentPoke.getAttacks()[3]);
+                focusPokemon(d, LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1));
                 }
             });
             i++;
         }
     }
+
+        public void focusPokemon(Drawable d, Pokemon currentPoke){
+            focusedPKMN.setImageDrawable(d);
+            name.setText(currentPoke.getName());
+            hp.setText(currentPoke.getStats()[0]);
+            att.setText(currentPoke.getStats()[1]);
+            def.setText(currentPoke.getStats()[2]);
+            spec.setText(currentPoke.getStats()[3]);
+            spd.setText(currentPoke.getStats()[4]);
+            att1.setText(currentPoke.getAttacks()[0]);
+            att2.setText(currentPoke.getAttacks()[1]);
+            att3.setText(currentPoke.getAttacks()[2]);
+            att4.setText(currentPoke.getAttacks()[3]);
+
+        }
 
 
 
