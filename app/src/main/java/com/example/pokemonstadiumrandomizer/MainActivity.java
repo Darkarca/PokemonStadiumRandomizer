@@ -1,25 +1,24 @@
 package com.example.pokemonstadiumrandomizer;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+
+import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 import com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -52,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
     TextView att2;
     TextView att3;
     TextView att4;
-    TextView p1wins;
-    TextView p2wins;
-    Button p1win;
-    Button p2win;
     List<ImageView> imageList = new ArrayList<>();
     List<ImageView> imageList2 = new ArrayList<>();
 
@@ -90,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
         att2 = findViewById(R.id.att2);
         att3 = findViewById(R.id.att3);
         att4 = findViewById(R.id.att4);
-        p1wins = findViewById(R.id.p1wins);
-        p1win = findViewById(R.id.p1win);
-        p2wins = findViewById(R.id.p2wins);
-        p2win = findViewById(R.id.p2win);
+        final TextView p1wins = findViewById(R.id.p1wins);
+        Button p1win = findViewById(R.id.p1win);
+        final TextView p2wins = findViewById(R.id.p2wins);
+        Button p2win = findViewById(R.id.p2win);
         p2win.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,6 +126,23 @@ public class MainActivity extends AppCompatActivity {
         imageList2.add(p2p4);
         imageList2.add(p2p5);
         imageList2.add(p2p6);
+        FloatingActionButton options = findViewById(R.id.options);
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent settingsIntent = new Intent(getApplicationContext(), SettingsActivity.class);
+                    startActivity(settingsIntent);
+                /*try {
+                    AssetLoader.clearSettings(getApplicationContext());
+                    AssetLoader.addSetting("PokemonImagePathStart", "pokemonImages/PoGo_sprites/pokemon_icon_", getApplicationContext());
+                    AssetLoader.addSetting("PokemonImagePathEnd", "_00.png", getApplicationContext());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }*/
+                    //System.out.println("Success");
+
+            }
+        });
             FloatingActionButton randomize = findViewById(R.id.randomize);
             randomize.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -160,7 +172,8 @@ public class MainActivity extends AppCompatActivity {
         int i = 0;
            for (final ImageView iv:imageList) {
                final int j = player1.get(i).getNumberValue();
-               Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/PoGo_sprites/pokemon_icon_" + player1.get(i).getNumber() + "_00.png"), null);
+               Drawable d = AssetLoader.loadPokemon(player1.get(i), getApplicationContext());
+               //Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/PoGo_sprites/pokemon_icon_" + player1.get(i).getNumber() + "_00.png"), null);
                //Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/" + "001" + ".png"), null);
                LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
                iv.setImageDrawable(d);
@@ -188,7 +201,8 @@ public class MainActivity extends AppCompatActivity {
            i=0;
         for (final ImageView iv:imageList2) {
             final int j = player2.get(i).getNumberValue();
-            final Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/PoGo_sprites/pokemon_icon_" + player2.get(i).getNumber() + "_00.png"), null);
+            Drawable d = AssetLoader.loadPokemon(player2.get(i), getApplicationContext());
+            //final Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/PoGo_sprites/pokemon_icon_" + player2.get(i).getNumber() + "_00.png"), null);
             //Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/" + "001" + ".png"), null);
             LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             iv.setImageDrawable(d);
@@ -268,10 +282,6 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
