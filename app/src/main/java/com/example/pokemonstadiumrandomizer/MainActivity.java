@@ -8,10 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
+import com.example.pokemonstadiumrandomizer.Loaders.FileReadWriter;
 import com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt;
 import com.example.pokemonstadiumrandomizer.Loaders.WinLossLoader;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
@@ -59,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initGUI() {
+        //AssetLoader.addSetting("BackgroundImage", "Background0.png",getApplicationContext());
+        FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
         p1p1 = findViewById(R.id.p1p1);
         p1p2 = findViewById(R.id.p1p2);
         p1p3 = findViewById(R.id.p1p3);
@@ -92,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 p2score++;
                 p2wins.setText("Wins: " + p2score);
                     WinLossLoader.writeScores(player2, player1, getApplicationContext());
-
             }
         });
         p1win.setOnClickListener(new View.OnClickListener() {
@@ -169,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
                    }
                });
                i++;
-
            }
            i=0;
         for (final ImageView iv:imageList2) {
@@ -200,8 +199,4 @@ public class MainActivity extends AppCompatActivity {
             att4.setText(currentPoke.getAttacks()[3]);
 
         }
-
-
-
-
 }

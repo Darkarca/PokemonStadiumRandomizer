@@ -2,10 +2,7 @@ package com.example.pokemonstadiumrandomizer.Loaders;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-
-import com.example.pokemonstadiumrandomizer.R;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,8 +13,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class AssetLoader {
 
@@ -43,26 +38,23 @@ public class AssetLoader {
             return null;
     }
 
-    private static List<String> loadAllSettings(Context context) throws IOException {
-        BufferedReader reader;
-        List<String> settings = new ArrayList<>();
-        final InputStream file = new FileInputStream(context.getFilesDir() + "/" + PATH);
-        reader = new BufferedReader(new InputStreamReader(file));
-        String line;
-        while ((line = reader.readLine()) != null) {
-                settings.add(line);
-            }
-
+    public static List<String> loadAllSettings(Context context){
+        List<String> settings = FileReadWriter.read(PATH,context);
+        for(int i=0; i<settings.size(); i++){
+            String current = settings.get(i);
+            settings.set(i,current.substring(current.indexOf('"')+1, current.lastIndexOf('"')));
+        }
         return settings;
     }
 
-    public static Boolean addSetting(String key, String value, Context context) throws IOException {
+    public static Boolean addSetting(String key, String value, Context context)  {
         List<String> settings = loadAllSettings(context);
         settings.add(key + " = " + '"' + value + '"');
         File file = new File(context.getFilesDir() + "/" + PATH);
         System.out.println(file.exists());
+        try {
         if(!file.exists()){
-            file.createNewFile();
+                file.createNewFile();
         }
         FileOutputStream fileout = new FileOutputStream(context.getFilesDir() + "/" + PATH);
         OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
@@ -71,12 +63,14 @@ public class AssetLoader {
             System.out.println(context.getFilesDir() + "/" + PATH);
         }
         outputWriter.close();
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     public static Boolean changeSetting(String key, String value, Context context) throws IOException {
-        List<String> settings = loadAllSettings(context);
+        List<String> settings = FileReadWriter.read("settings.txt",context);
         for (int i=0; i<settings.size(); i++) {
             if(settings.get(i).contains(key)) {
                 if (settings.get(i).indexOf('"') >= 0) {

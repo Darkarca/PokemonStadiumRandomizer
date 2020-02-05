@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
 
-import java.io.IOException;
 import java.util.List;
 
 public class WinLossLoader {

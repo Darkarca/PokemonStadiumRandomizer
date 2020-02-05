@@ -5,29 +5,39 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
-
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
+import com.example.pokemonstadiumrandomizer.Loaders.FileReadWriter;
 
 import java.io.IOException;
+import java.util.List;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    RadioButton defaultBack;
+    RadioButton tiltedBack;
+    RadioButton greatBack;
+    RadioButton invertedBack;
+    RadioButton masterBack;
+    RadioButton dexBack;
+    RadioButton stadiumSprites;
+    RadioButton goSprites;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         initGUI();
+        checkSettings();
     }
 
     private void initGUI() {
-     RadioButton defaultBack = findViewById(R.id.defaultBack);
-        RadioButton tiltedBack = findViewById(R.id.tiltedBack);
-        RadioButton greatBack = findViewById(R.id.greatBack);
-        RadioButton invertedBack = findViewById(R.id.invertedBack);
-        RadioButton masterBack = findViewById(R.id.masterBack);
-        RadioButton dexBack = findViewById(R.id.dexBack);
-        RadioButton stadiumSprites = findViewById(R.id.stadiumSprites);
-        RadioButton goSprites = findViewById(R.id.goSprites);
+       defaultBack = findViewById(R.id.defaultBack);
+       tiltedBack = findViewById(R.id.tiltedBack);
+       greatBack = findViewById(R.id.greatBack);
+       invertedBack = findViewById(R.id.invertedBack);
+       masterBack = findViewById(R.id.masterBack);
+       dexBack = findViewById(R.id.dexBack);
+       stadiumSprites = findViewById(R.id.stadiumSprites);
+       goSprites = findViewById(R.id.goSprites);
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +112,46 @@ public class SettingsActivity extends AppCompatActivity {
         dexBack.setOnClickListener(clickListener);
         goSprites.setOnClickListener(clickListener);
         stadiumSprites.setOnClickListener(clickListener);
+    }
+
+    private void checkSettings(){
+        List<String> settings = AssetLoader.loadAllSettings(getApplicationContext());
+        for (String s :settings ) {
+            switch(s){
+                case "Background1.png":
+                    defaultBack.toggle();
+                break;
+            case "Background0.png":
+                    invertedBack.toggle();
+                break;
+            case "Background2.png":
+                    tiltedBack.toggle();
+                break;
+            case "Background3.png":
+                    defaultBack.toggle();
+                break;
+            case "Background4.png":
+                    greatBack.toggle();
+                break;
+            case "Background5.png":
+                    greatBack.toggle();
+                break;
+            case "Background6.png":
+                    masterBack.toggle();
+                break;
+            case "Background7.png":
+                    dexBack.toggle();
+                break;
+                case "pokemonImages/PoGo_sprites/pokemon_icon_":
+                    goSprites.toggle();
+                break;
+            case "pokemonImages/Stadium_original/":
+                    stadiumSprites.toggle();
+                break;
+                default:
+                    break;
+            }
+        }
     }
 
 }

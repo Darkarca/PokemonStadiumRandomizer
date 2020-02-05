@@ -23,13 +23,7 @@ public class FileReadWriter {
         if(!file.exists()){
             file.createNewFile();
         }
-        System.out.println(file.exists());
-        if(!file.exists()){
-            file.createNewFile();
-        }
-        FileOutputStream fileout = null;
-
-            fileout = new FileOutputStream(context.getFilesDir() + "/" + path);
+        FileOutputStream fileout = new FileOutputStream(context.getFilesDir() + "/" + path);
 
         OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
         for (String s:currentData) {
@@ -42,6 +36,25 @@ public class FileReadWriter {
         return false;
     }
 
+    public static void write(String path, String toAdd, Context context){
+        List<String> currentData = new ArrayList<>();
+        currentData.add(toAdd);
+        File file = new File(context.getFilesDir() + "/" + path);
+        try {
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileOutputStream fileout = new FileOutputStream(context.getFilesDir() + "/" + path);
+
+            OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
+            for (String s:currentData) {
+                outputWriter.write(s + "\n");
+            }
+            outputWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static List<String> read(String path, Context context){
         List <String> data = new ArrayList();
         BufferedReader reader;
