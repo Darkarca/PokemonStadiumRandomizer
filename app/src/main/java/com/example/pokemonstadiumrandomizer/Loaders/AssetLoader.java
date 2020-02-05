@@ -78,11 +78,13 @@ public class AssetLoader {
     public static Boolean changeSetting(String key, String value, Context context) throws IOException {
         List<String> settings = loadAllSettings(context);
         for (int i=0; i<settings.size(); i++) {
-            if(settings.get(i).contains(key)){
-                String temp = settings.get(i).substring(0,settings.get(i).indexOf('"'));
-                temp = temp + value;
-                //String temp = key + " = " + '"' + value + '"';
-                settings.set(i,temp);
+            if(settings.get(i).contains(key)) {
+                if (settings.get(i).indexOf('"') >= 0) {
+                    String temp = settings.get(i).substring(0, settings.get(i).indexOf('"'));
+                    temp = temp + value;
+                    //String temp = key + " = " + '"' + value + '"';
+                    settings.set(i, temp);
+                }
             }
         }
 

@@ -1,5 +1,6 @@
 package com.example.pokemonstadiumrandomizer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,10 +16,12 @@ import android.widget.TextView;
 
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 import com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt;
+import com.example.pokemonstadiumrandomizer.Loaders.WinLossLoader;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -96,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 p2wins.setText("Wins: " + p2score);
 
                 try {
-                    writeScores(2);
+                    WinLossLoader.writeScores(player2, player1, getApplicationContext());
+                    System.out.println(WinLossLoader.readScores("winners.txt", getApplicationContext()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -108,7 +112,9 @@ public class MainActivity extends AppCompatActivity {
                 p1score++;
                 p1wins.setText("Wins: " + p1score);
                 try {
-                    writeScores(1);
+                    WinLossLoader.writeScores(player1, player2, getApplicationContext());
+                    WinLossLoader.readScores("winners.txt", getApplicationContext());
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -169,12 +175,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void renderPokemon() throws IOException {
+
         int i = 0;
            for (final ImageView iv:imageList) {
                final int j = player1.get(i).getNumberValue();
                Drawable d = AssetLoader.loadPokemon(player1.get(i), getApplicationContext());
-               //Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/PoGo_sprites/pokemon_icon_" + player1.get(i).getNumber() + "_00.png"), null);
-               //Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/" + "001" + ".png"), null);
                LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
                iv.setImageDrawable(d);
                iv.setOnClickListener(new View.OnClickListener() {
@@ -194,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
                        att4.setText(currentPoke.getAttacks()[3]);
                    }
                });
-               System.out.println("SUCCESS");
                i++;
 
            }
@@ -202,8 +206,6 @@ public class MainActivity extends AppCompatActivity {
         for (final ImageView iv:imageList2) {
             final int j = player2.get(i).getNumberValue();
             Drawable d = AssetLoader.loadPokemon(player2.get(i), getApplicationContext());
-            //final Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/PoGo_sprites/pokemon_icon_" + player2.get(i).getNumber() + "_00.png"), null);
-            //Drawable d = Drawable.createFromStream(getAssets().open("pokemonImages/" + "001" + ".png"), null);
             LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             iv.setImageDrawable(d);
             iv.setOnClickListener(new View.OnClickListener() {
@@ -223,66 +225,11 @@ public class MainActivity extends AppCompatActivity {
                     att4.setText(currentPoke.getAttacks()[3]);
                 }
             });
-            System.out.println("SUCCESS");
             i++;
         }
     }
 
-    private void writeScores(int winner) throws IOException {
-        try {
-          /*  if(winner == 1) {
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(getApplicationContext().openFileOutput("winners.txt.txt", getApplicationContext().MODE_PRIVATE));
-                for (Pokemon current : player1) {
-                    outputStreamWriter.write(current.getName() + "\n");
-                }
-                outputStreamWriter.close();
-                outputStreamWriter = new OutputStreamWriter(getApplicationContext().openFileOutput("losers.txt", getApplicationContext().MODE_PRIVATE));
-                for (Pokemon current : player1) {
-                    outputStreamWriter.write(current.getName() + "\n");
-                }
-                outputStreamWriter.close();
-            }else{
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(getApplicationContext().openFileOutput("winners.txt.txt", getApplicationContext().MODE_PRIVATE));
-                for (Pokemon current : player2) {
-                    outputStreamWriter.write(current.getName() + "\n");
-                }
-                outputStreamWriter.close();
-                outputStreamWriter = new OutputStreamWriter(getApplicationContext().openFileOutput("losers.txt", getApplicationContext().MODE_PRIVATE));
-                for (Pokemon current : player1) {
-                    outputStreamWriter.write(current.getName() + "\n");
-                }
-                outputStreamWriter.close();*/
-          File path = getApplicationContext().getFilesDir();
-          File file = new File(path, "winners.txt.txt");
-            FileOutputStream stream = new FileOutputStream(file);
-            for (Pokemon current:player1) {
-                stream.write((current.getName() + "\n").getBytes());
-                System.out.println(getAssets().open("winners.txt").read());
-                System.out.println((current.getName() + "\n").getBytes());
-            }
-
-            stream.close();
-
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
 
-        return super.onOptionsItemSelected(item);
-    }
+
 }
