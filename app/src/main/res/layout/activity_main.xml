@@ -8,13 +8,15 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/backImg"
+        android:layout_width="416dp"
+        android:layout_height="688dp"
 
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/background0"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -189,8 +191,8 @@
 
                 <TextView
                     android:id="@+id/pokeName"
-                    android:layout_width="match_parent"
-                    android:layout_height="62dp"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
                     android:text="Pokemon"
                     android:textSize="30sp" />
 
@@ -238,7 +240,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="85dp"
+                    android:layout_height="64dp"
                     android:text="Pokemon"
                     android:textSize="30sp"
                     android:visibility="invisible" />

@@ -76,7 +76,7 @@ public class AssetLoader {
         return false;
     }
 
-    public static Boolean changeSetting(String key, String value, Context context) throws IOException {
+    public static Boolean changeSetting(String key, String value, Context context){
         List<String> settings = FileReadWriter.read("settings.txt",context);
         for (int i=0; i<settings.size(); i++) {
             if(settings.get(i).contains(key)) {
@@ -91,8 +91,11 @@ public class AssetLoader {
 
         //FileOutputStream rawResource = context.getResources().openRawResource(R.raw.settings);
         File file = new File(context.getFilesDir() + "/" + PATH);
+        try {
         if(!file.exists()){
-            file.createNewFile();
+
+                file.createNewFile();
+
         }
         FileOutputStream fileout = new FileOutputStream(context.getFilesDir() + "/" + PATH);
         OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
@@ -101,7 +104,9 @@ public class AssetLoader {
             System.out.println("Changed setting in: " + context.getFilesDir() + "/" + PATH + " to: " + value);
         }
         outputWriter.close();
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
     public static Drawable loadPokemon(Pokemon pokemon, Context context) throws IOException {

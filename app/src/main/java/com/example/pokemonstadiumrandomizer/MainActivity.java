@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 import com.example.pokemonstadiumrandomizer.Loaders.FileReadWriter;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    LinearLayout backImg;
     int p1score = 0;
     int p2score = 0;
     List<Pokemon> player1 = new ArrayList<>();
@@ -57,9 +59,17 @@ public class MainActivity extends AppCompatActivity {
         initGUI();
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        SettingsActivity.setBackground(backImg,getApplicationContext());
+    }
+
     private void initGUI() {
+        backImg = findViewById(R.id.backImg);
+        SettingsActivity.setBackground(backImg, getApplicationContext());
         //AssetLoader.addSetting("BackgroundImage", "Background0.png",getApplicationContext());
-        FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
+        //FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
         p1p1 = findViewById(R.id.p1p1);
         p1p2 = findViewById(R.id.p1p2);
         p1p3 = findViewById(R.id.p1p3);

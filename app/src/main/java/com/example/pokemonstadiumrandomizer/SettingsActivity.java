@@ -1,6 +1,7 @@
 package com.example.pokemonstadiumrandomizer;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,7 +10,6 @@ import android.widget.RadioButton;
 
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -23,6 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
     RadioButton dexBack;
     RadioButton stadiumSprites;
     RadioButton goSprites;
+    RadioButton cyndaquil;
     LinearLayout backImg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void initGUI() {
         backImg = findViewById(R.id.backImg);
+        setBackground(backImg, getApplicationContext());
        defaultBack = findViewById(R.id.defaultBack);
        tiltedBack = findViewById(R.id.tiltedBack);
        greatBack = findViewById(R.id.greatBack);
@@ -42,74 +44,54 @@ public class SettingsActivity extends AppCompatActivity {
        dexBack = findViewById(R.id.dexBack);
        stadiumSprites = findViewById(R.id.stadiumSprites);
        goSprites = findViewById(R.id.goSprites);
+       cyndaquil = findViewById(R.id.cyndaquil);
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     switch (v.getId()) {
-                            case R.id.defaultBack:
-                                try {
-                                    AssetLoader.changeSetting("Background", '"' + "background1.png" + '"', getApplicationContext());
-                                    setBackground();
-                                    break;
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
+                        case R.id.cyndaquil:
+                            AssetLoader.changeSetting("Background", '"' + "background6.jpg" + '"', getApplicationContext());
+                            setBackground(backImg, getApplicationContext());
+                            break;
+
+                        case R.id.defaultBack:
+                                AssetLoader.changeSetting("Background", '"' + "background1.png" + '"', getApplicationContext());
+                                setBackground(backImg, getApplicationContext());
+                                break;
+
                         case R.id.tiltedBack:
-                            try {
                                 AssetLoader.changeSetting("Background", '"' + "background2.png" + '"', getApplicationContext());
-                                setBackground();
+                                setBackground(backImg, getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
                         case R.id.greatBack:
-                            try {
-                                AssetLoader.changeSetting("Background", '"' + "background4.png" + '"', getApplicationContext());
-                                setBackground();
+                                AssetLoader.changeSetting("Background", '"' + "background4.jpg" + '"', getApplicationContext());
+                                setBackground(backImg, getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
                         case R.id.invertedBack:
-                            try {
                                 AssetLoader.changeSetting("Background", '"' + "background0.png" + '"', getApplicationContext());
-                                setBackground();
+                                setBackground(backImg, getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
                         case R.id.masterBack:
-                            try {
                                 AssetLoader.changeSetting("Background", '"' + "background5.png" + '"', getApplicationContext());
-                                setBackground();
+                                setBackground(backImg, getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
                         case R.id.dexBack:
-                            try {
                                 AssetLoader.changeSetting("Background",  '"' + "background7.png" + '"', getApplicationContext());
-                                setBackground();
+                                setBackground(backImg, getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
                         case R.id.stadiumSprites:
-                            try {
                                 AssetLoader.changeSetting("PokemonImagePathStart", '"' + "pokemonImages/Stadium_original/" + '"', getApplicationContext());
                                 AssetLoader.changeSetting("PokemonImagePathEnd", '"' + ".png" + '"', getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
                         case R.id.goSprites:
-                            try {
                                 AssetLoader.changeSetting("PokemonImagePathStart", '"' + "pokemonImages/PoGo_sprites/pokemon_icon_" + '"', getApplicationContext());
                                 AssetLoader.changeSetting("PokemonImagePathEnd", '"' + "_00.png" + '"', getApplicationContext());
                                 break;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
 
                     }
                 }
@@ -122,13 +104,17 @@ public class SettingsActivity extends AppCompatActivity {
         dexBack.setOnClickListener(clickListener);
         goSprites.setOnClickListener(clickListener);
         stadiumSprites.setOnClickListener(clickListener);
+        cyndaquil.setOnClickListener(clickListener);
     }
 
     private void checkSettings(){
         List<String> settings = AssetLoader.loadAllSettings(getApplicationContext());
         for (String s :settings ) {
             switch(s){
-                case "Background1.png":
+            case "background6.jpg":
+                cyndaquil.toggle();
+                break;
+            case "Background1.png":
                     defaultBack.toggle();
                 break;
             case "Background0.png":
@@ -140,7 +126,7 @@ public class SettingsActivity extends AppCompatActivity {
             case "Background3.png":
                     defaultBack.toggle();
                 break;
-            case "Background4.png":
+            case "Background4.jpg":
                     greatBack.toggle();
                 break;
             case "Background5.png":
@@ -152,22 +138,22 @@ public class SettingsActivity extends AppCompatActivity {
             case "Background7.png":
                     dexBack.toggle();
                 break;
-                case "pokemonImages/PoGo_sprites/pokemon_icon_":
+            case "pokemonImages/PoGo_sprites/pokemon_icon_":
                     goSprites.toggle();
                 break;
             case "pokemonImages/Stadium_original/":
                     stadiumSprites.toggle();
                 break;
-                default:
+            default:
                     break;
             }
         }
     }
 
-    private void setBackground(){
-        String s = AssetLoader.loadSetting("BackgroundImage",getApplicationContext());
-        int id = this.getResources().getIdentifier(s.substring(0,s.length()-4), "drawable", this.getPackageName());
-        backImg.setBackgroundResource(id);
+    public static void setBackground(LinearLayout view, Context context){
+        String s = AssetLoader.loadSetting("BackgroundImage",context);
+        int id = context.getResources().getIdentifier(s.substring(0,s.length()-4), "drawable", context.getPackageName());
+        view.setBackgroundResource(id);
     }
 
 }
