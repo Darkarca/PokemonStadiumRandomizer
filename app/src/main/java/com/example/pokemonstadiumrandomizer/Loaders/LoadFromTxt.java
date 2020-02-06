@@ -1,20 +1,15 @@
 package com.example.pokemonstadiumrandomizer.Loaders;
 
 import android.content.Context;
-import android.content.res.AssetManager;
-
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
-
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoadFromTxt {
+public class LoadFromTxt implements IPokemonLoader {
     static final String PATH = "pokemon.txt";
     static List<Pokemon> loadedPokes = new ArrayList<>();
 
@@ -40,19 +35,6 @@ public class LoadFromTxt {
          } catch(IOException ioe){
              ioe.printStackTrace();
          }
-      /*  try (BufferedReader br = new BufferedReader( new InputStreamReader(context.getAssets().open(PATH)))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                List<String> currentPoke = new ArrayList<>();
-                currentPoke.add(line);
-                for(int i = 0; i<9; i++){
-                    currentPoke.add(br.readLine());
-                }
-               loadedPokes.add(new Pokemon(currentPoke));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     public static List<Pokemon> loadPokemon(Context context){

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
+import com.example.pokemonstadiumrandomizer.GUIUpdaters.BackgroundGUIUpdater;
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void initGUI() {
         backImg = findViewById(R.id.backImg);
-        setBackground(backImg, getApplicationContext());
+        BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
        defaultBack = findViewById(R.id.defaultBack);
        tiltedBack = findViewById(R.id.tiltedBack);
        greatBack = findViewById(R.id.greatBack);
@@ -51,36 +52,36 @@ public class SettingsActivity extends AppCompatActivity {
                     switch (v.getId()) {
                         case R.id.cyndaquil:
                             AssetLoader.changeSetting("Background", '"' + "background6.jpg" + '"', getApplicationContext());
-                            setBackground(backImg, getApplicationContext());
+                            BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                             break;
 
                         case R.id.defaultBack:
                                 AssetLoader.changeSetting("Background", '"' + "background1.png" + '"', getApplicationContext());
-                                setBackground(backImg, getApplicationContext());
+                                BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                                 break;
 
                         case R.id.tiltedBack:
                                 AssetLoader.changeSetting("Background", '"' + "background2.png" + '"', getApplicationContext());
-                                setBackground(backImg, getApplicationContext());
+                                BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                                 break;
                         case R.id.greatBack:
                                 AssetLoader.changeSetting("Background", '"' + "background4.jpg" + '"', getApplicationContext());
-                                setBackground(backImg, getApplicationContext());
+                                BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                                 break;
 
                         case R.id.invertedBack:
                                 AssetLoader.changeSetting("Background", '"' + "background0.png" + '"', getApplicationContext());
-                                setBackground(backImg, getApplicationContext());
+                                BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                                 break;
 
                         case R.id.masterBack:
                                 AssetLoader.changeSetting("Background", '"' + "background5.png" + '"', getApplicationContext());
-                                setBackground(backImg, getApplicationContext());
+                                BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                                 break;
 
                         case R.id.dexBack:
                                 AssetLoader.changeSetting("Background",  '"' + "background7.png" + '"', getApplicationContext());
-                                setBackground(backImg, getApplicationContext());
+                                BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
                                 break;
 
                         case R.id.stadiumSprites:
@@ -150,10 +151,6 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public static void setBackground(LinearLayout view, Context context){
-        String s = AssetLoader.loadSetting("BackgroundImage",context);
-        int id = context.getResources().getIdentifier(s.substring(0,s.length()-4), "drawable", context.getPackageName());
-        view.setBackgroundResource(id);
-    }
+
 
 }

@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.pokemonstadiumrandomizer.GUIUpdaters.BackgroundGUIUpdater;
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
 import com.example.pokemonstadiumrandomizer.Loaders.FileReadWriter;
 import com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt;
@@ -21,6 +23,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    Pokemon focusedPokemon;
     LinearLayout backImg;
     int p1score = 0;
     int p2score = 0;
@@ -62,13 +65,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        SettingsActivity.setBackground(backImg,getApplicationContext());
+        BackgroundGUIUpdater.setBackground(backImg,getApplicationContext());
+        try {
+            if(!player1.isEmpty() && !player2.isEmpty()) {
+                renderPokemon();
+            }
+            if(focusedPokemon!=null){
+                focusPokemon();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initGUI() {
         //FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
         backImg = findViewById(R.id.backImg);
-        SettingsActivity.setBackground(backImg, getApplicationContext());
+        BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
         //AssetLoader.addSetting("BackgroundImage", "Background0.png",getApplicationContext());
         p1p1 = findViewById(R.id.p1p1);
         p1p2 = findViewById(R.id.p1p2);
@@ -175,7 +188,8 @@ public class MainActivity extends AppCompatActivity {
                iv.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View v) {
-                       focusPokemon(d, LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1));
+                       focusedPokemon =  LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1);
+                       focusPokemon();
                    }
                });
                i++;
@@ -188,25 +202,31 @@ public class MainActivity extends AppCompatActivity {
             iv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                focusPokemon(d, LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1));
+                    focusedPokemon =  LoadFromTxt.loadPokemon(getApplicationContext()).get(j-1);
+                    focusPokemon();
+
                 }
             });
             i++;
         }
     }
 
-        public void focusPokemon(Drawable d, Pokemon currentPoke){
-            focusedPKMN.setImageDrawable(d);
-            name.setText(currentPoke.getName());
-            hp.setText(currentPoke.getStats()[0]);
-            att.setText(currentPoke.getStats()[1]);
-            def.setText(currentPoke.getStats()[2]);
-            spec.setText(currentPoke.getStats()[3]);
-            spd.setText(currentPoke.getStats()[4]);
-            att1.setText(currentPoke.getAttacks()[0]);
-            att2.setText(currentPoke.getAttacks()[1]);
-            att3.setText(currentPoke.getAttacks()[2]);
-            att4.setText(currentPoke.getAttacks()[3]);
+        public void focusPokemon(){
+            try {
+                focusedPKMN.setImageDrawable(AssetLoader.loadPokemon(focusedPokemon, getApplicationContext()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            name.setText(focusedPokemon.getName());
+            hp.setText(focusedPokemon.getStats()[0]);
+            att.setText(focusedPokemon.getStats()[1]);
+            def.setText(focusedPokemon.getStats()[2]);
+            spec.setText(focusedPokemon.getStats()[3]);
+            spd.setText(focusedPokemon.getStats()[4]);
+            att1.setText(focusedPokemon.getAttacks()[0]);
+            att2.setText(focusedPokemon.getAttacks()[1]);
+            att3.setText(focusedPokemon.getAttacks()[2]);
+            att4.setText(focusedPokemon.getAttacks()[3]);
 
         }
 }
