@@ -10,10 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.example.pokemonstadiumrandomizer.GUIUpdaters.BackgroundGUIUpdater;
 import com.example.pokemonstadiumrandomizer.Loaders.AssetLoader;
-import com.example.pokemonstadiumrandomizer.Loaders.FileReadWriter;
 import com.example.pokemonstadiumrandomizer.Loaders.LoadFromTxt;
 import com.example.pokemonstadiumrandomizer.Loaders.WinLossLoader;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
@@ -23,66 +21,71 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    Pokemon focusedPokemon;
-    LinearLayout backImg;
-    int p1score = 0;
-    int p2score = 0;
-    List<Pokemon> player1 = new ArrayList<>();
-    List<Pokemon> player2 = new ArrayList<>();
-    ImageView p1p1;
-    ImageView p1p2;
-    ImageView p1p3;
-    ImageView p1p4;
-    ImageView p1p5;
-    ImageView p1p6;
-    ImageView p2p1;
-    ImageView p2p2;
-    ImageView p2p3;
-    ImageView p2p4;
-    ImageView p2p5;
-    ImageView p2p6;
-    ImageView focusedPKMN;
-    TextView name;
-    TextView hp;
-    TextView att;
-    TextView def;
-    TextView spec;
-    TextView spd;
-    TextView att1;
-    TextView att2;
-    TextView att3;
-    TextView att4;
-    List<ImageView> imageList = new ArrayList<>();
-    List<ImageView> imageList2 = new ArrayList<>();
+    private static Pokemon focusedPokemon;
+    private LinearLayout backImg;
+    private int p1score = 0;
+    private int p2score = 0;
+    private static List<Pokemon> player1 = new ArrayList<>();
+    private static List<Pokemon> player2 = new ArrayList<>();
+    private ImageView p1p1;
+    private ImageView p1p2;
+    private ImageView p1p3;
+    private ImageView p1p4;
+    private ImageView p1p5;
+    private ImageView p1p6;
+    private ImageView p2p1;
+    private ImageView p2p2;
+    private ImageView p2p3;
+    private ImageView p2p4;
+    private ImageView p2p5;
+    private ImageView p2p6;
+    private ImageView focusedPKMN;
+    private TextView name;
+    private TextView hp;
+    private TextView att;
+    private TextView def;
+    private TextView spec;
+    private TextView spd;
+    private TextView att1;
+    private TextView att2;
+    private TextView att3;
+    private TextView att4;
+    private List<ImageView> imageList = new ArrayList<>();
+    private List<ImageView> imageList2 = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTextTheme();
         setContentView(R.layout.activity_main);
         initGUI();
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        BackgroundGUIUpdater.setBackground(backImg,getApplicationContext());
-        try {
             if(!player1.isEmpty() && !player2.isEmpty()) {
                 renderPokemon();
             }
-            if(focusedPokemon!=null){
+            if(focusedPokemon != null) {
                 focusPokemon();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+    }
+
+    /**
+     * Changes theme depending on the corresponding value in the settings Textfile.
+     * Only applies if called before GUI is initiated, in order to use you need to start a new activity if called later on in the code.
+     */
+    private void setTextTheme() {
+        String theme = AssetLoader.loadSetting("theme",getApplicationContext());
+        switch(theme){
+            case "light":
+                BackgroundGUIUpdater.setLightText(this);
+                break;
+            case "default":
+                BackgroundGUIUpdater.setDarkText(this);
+                break;
         }
     }
 
     private void initGUI() {
-        //FileReadWriter.write("settings.txt","PokemonImagePathStart = "+'"'+"pokemonImages/PoGo_sprites/pokemon_icon_" + '"' + "\n" + "PokemonImagePathEnd" + " = " + '"' + "00.png" + '"' + "\n" +"BackgroundImage = " + '"' + "Background0.png" + '"',getApplicationContext());
         backImg = findViewById(R.id.backImg);
         BackgroundGUIUpdater.setBackground(backImg, getApplicationContext());
-        //AssetLoader.addSetting("BackgroundImage", "Background0.png",getApplicationContext());
         p1p1 = findViewById(R.id.p1p1);
         p1p2 = findViewById(R.id.p1p2);
         p1p3 = findViewById(R.id.p1p3);
@@ -143,14 +146,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                     Intent settingsIntent = new Intent(getApplicationContext(), SettingsActivity.class);
+                    finish();
                     startActivity(settingsIntent);
-                /*try {
-                    AssetLoader.clearSettings(getApplicationContext());
-                    AssetLoader.addSetting("PokemonImagePathStart", "pokemonImages/PoGo_sprites/pokemon_icon_", getApplicationContext());
-                    AssetLoader.addSetting("PokemonImagePathEnd", "_00.png", getApplicationContext());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
             }
         });
             FloatingActionButton randomize = findViewById(R.id.randomize);
@@ -169,16 +166,16 @@ public class MainActivity extends AppCompatActivity {
                         player2.add(totalPokes.get(randomInt));
                         totalPokes.remove(totalPokes.get(randomInt));
                     }
-                    try {
                         renderPokemon();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 }
             });
     }
 
-    private void renderPokemon() throws IOException {
+    /**
+     * Renders Pokemons sprites for all 12 currently loaded randomized Pokemon,
+     * attaches an onClickListener to each Pokemon sprite which Renders more information on the Pokemon if activated.
+     */
+    private void renderPokemon(){
 
         int i = 0;
            for (final ImageView iv:imageList) {
@@ -211,12 +208,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Loads information about the focusedPokemon Object on the screen (Attack names and Stats are displayed).
+     */
         public void focusPokemon(){
-            try {
-                focusedPKMN.setImageDrawable(AssetLoader.loadPokemon(focusedPokemon, getApplicationContext()));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            focusedPKMN.setImageDrawable(AssetLoader.loadPokemon(focusedPokemon, getApplicationContext()));
             name.setText(focusedPokemon.getName());
             hp.setText(focusedPokemon.getStats()[0]);
             att.setText(focusedPokemon.getStats()[1]);

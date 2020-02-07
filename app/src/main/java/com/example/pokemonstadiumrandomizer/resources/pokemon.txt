@@ -271,7 +271,7 @@ Dig
 Swift
 Seismic Toss
 Sand-attack
-Nidoran&#9792;
+Nidoran(Female);
 HP: 142
 Attack: 78
 Defense: 84
@@ -301,7 +301,7 @@ Toxic
 Double Kick
 Bite
 Earthquake
-Nidoran&#9794;
+Nidoran&(Male);
 HP: 135
 Attack: 90
 Defense: 74

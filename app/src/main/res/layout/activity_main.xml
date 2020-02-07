@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="24dp"
         android:background="@drawable/background0"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,10 +54,9 @@
 
             <TextView
                 android:id="@+id/p1wins"
-                android:layout_width="match_parent"
+                android:layout_width="116dp"
                 android:layout_height="wrap_content"
                 android:text="Wins: "
-                android:textColor="@android:color/black"
                 android:textSize="30sp" />
         </LinearLayout>
 
@@ -134,7 +132,7 @@
 
             <TextView
                 android:id="@+id/p2wins"
-                android:layout_width="match_parent"
+                android:layout_width="116dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Wins: "

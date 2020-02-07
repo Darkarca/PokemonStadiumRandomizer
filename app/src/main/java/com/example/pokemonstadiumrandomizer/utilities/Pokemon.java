@@ -2,6 +2,13 @@ package com.example.pokemonstadiumrandomizer.utilities;
 
 import java.util.List;
 
+/**
+ * Class to represent a Pokemon (Currently only supports Generation 1 as there is no implementation for abilities.
+ * Possible extensions would include Moves being represented by an Object
+ * (found a list of all Generation 1 Moves at https://pokemondb.net/move/generation/1, seems to contain lists for several generations)
+ * Constructor needs to be overloaded when abilities are implemented.
+ * Possible damage calculation methods?
+ */
 public class Pokemon {
     private String name;
     private String[] stats;
@@ -9,6 +16,11 @@ public class Pokemon {
     private int number;
 
 
+    /**
+     * Constructor creating a Pokemon Object representing a Generation 1 Pokemon (No ability),
+     * currently does not support Move Objects but rather represents Moves as Strings just to be displayed in a TextView.
+     * @param list  The List of Strings containing necessary information for the Pokemon to be created.
+     */
     public Pokemon(List<String> list){
         this.name = list.get(0);
         this.stats = new String[5];
@@ -48,6 +60,11 @@ public class Pokemon {
         this.attacks = attacks;
     }
 
+    /**
+     * Concatenates the Pokemons number to a three digit String,
+     * useful to find ImageNames since most Image resources will be named Pokemon001.png etc.
+     * @return  This Pokemons NationalDex number represented by a 3-digit String.
+     */
     public String getNumber() {
         String n = number + "";
         if(this.number<10){

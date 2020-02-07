@@ -4,8 +4,12 @@ import android.content.Context;
 import com.example.pokemonstadiumrandomizer.utilities.Pokemon;
 import java.util.List;
 
+/**
+ * Interface for loading Pokemon from a file (Or the internet etc?)
+ *
+ */
 interface IPokemonLoader {
-    public static List<Pokemon> loadPokemon(Context context){
+    static List<Pokemon> loadPokemon(Context context){
         return null;
     }
 }
